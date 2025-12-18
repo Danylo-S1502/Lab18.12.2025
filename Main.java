@@ -1,14 +1,16 @@
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        // create simulator object
         TrafficLightSimulator simulator =
                 new TrafficLightSimulator(TrafficLightColor.RED);
 
-        // loop limiting number of executions
-        for (int i = 0; i < 10; i++) {
+        // infinite loop
+        while (true) {
             System.out.println(simulator.toString());
             simulator.changeColor(simulator.getCurrentColor());
+
+            // small delay so output is readable
+            Thread.sleep(1000);
         }
     }
-}
+}}
